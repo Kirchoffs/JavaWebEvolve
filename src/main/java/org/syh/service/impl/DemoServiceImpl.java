@@ -2,7 +2,6 @@ package org.syh.service.impl;
 
 import org.syh.dao.DaoFactory;
 import org.syh.dao.DemoDao;
-import org.syh.dao.impl.DemoCycasDaoImpl;
 import org.syh.service.DemoService;
 
 import java.util.List;

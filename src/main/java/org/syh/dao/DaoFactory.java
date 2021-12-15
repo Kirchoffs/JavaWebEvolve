@@ -1,9 +1,12 @@
 package org.syh.dao;
 
-import org.syh.dao.impl.DemoCeltisDaoImpl;
-
 public class DaoFactory {
     public static DemoDao getDemoDao() {
-        return new DemoCeltisDaoImpl();
+        try {
+            return (DemoDao) Class.forName("org.syh.dao.impl.DemoCeltisDaoImpl").newInstance();
+        } catch (Exception exp) {
+            exp.printStackTrace();
+            throw new RuntimeException("DemoDao instantiation error, cause: " + exp.getMessage());
+        }
     }
 }
